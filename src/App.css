@@ -1,0 +1,101 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+#titl{
+    padding-top: 20px;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.header{
+    height: 64px;
+    width: 100%;
+    background:rgba(0,188,212,1);
+    text-align: center;
+    font-size: 50px;
+    color: mintcream;
+    font-style: initial;
+}
+
+.heading2{
+    color: rgba(0,188,212,1);
+}
+
+.heading3{
+    color: rgba(0,188,212,1);
+}
+
+.headingProfile{
+    color: rgba(0,188,212,1);
+    margin-top: -10px;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.subheading{
+    margin-bottom: initial;
+    margin-left: initial;
+}
+
+.logout{
+    margin-right: 50px;
+}
+
+.buttonspace{
+    margin-right: 10px; 
+}
+
+
+.jobview{
+    background: white;
+    border: 2px solid rgba(0,188,212,1);
+    border-radius: 50px;
+    height: initial;
+    width: 40%;
+    text-align: center;
+    margin: auto;
+    position: relative;
+
+}
+
+.jobviewheading{
+    color: rgba(0,188,212,1);
+    font-style: normal;
+    font-size: x-large;
+}
+
+.jobviewbutton{
+    height: 25px;
+    width: initial;
+    background: aliceblue;
+    font-size: large;
+}
+
+.flatbutton
+{
+    color:white;
+    background: brown;
+}
+.allview{
+
+}
