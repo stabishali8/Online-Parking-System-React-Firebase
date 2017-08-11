@@ -16,55 +16,62 @@ const style = {
 };
 
 export class ViewSlot extends Component{
-    constructor()
+    constructor(props)
     {
-        super();
+        super(props);
         this.state ={
-            area:'',
-            slot:'',
-            slots:[]            
+            area:this.props.location.state.area,
+            slots:this.props.location.state.slot,
+            slot:[]            
         }
     }
     componentDidMount()
     {
+        // this.setState({
+        //         area:this.props.location.state.area,
+        //         slots:this.props.location.state.slot
+        // })
+
         var slotNo='';
         var slo=[];
-        console.log(window.location.search);
-        const parsed = queryString.parse(window.location.search);
-        console.log(parsed);
-        var rootRef = firebase.database().ref().child('Location/'+parsed.key);
-        rootRef.on('value',snap=>{
-            console.log(snap.val().area+" aew")
-            this.setState(() => ({
-                area: snap.val().area,
-                slot: snap.val().slot
-            }))           
-            console.log(JSON.stringify(this.state));
-        for(var i=0;i<this.state.slot;i++)
+        // console.log(window.location.search);
+        // const parsed = queryString.parse(window.location.search);
+        // console.log(parsed);
+        // var rootRef = firebase.database().ref().child('Location/'+parsed.key);
+        // rootRef.on('value',snap => {
+        //     console.log(snap.val().area+" aew")
+        //     this.setState({
+        //         area: snap.val().area,
+        //         slots: snap.val().slots
+        //     })           
+            console.log("dada "+this.state.slots+ this.state.area);
+            // console.log(JSON.stringify(this.state));
+        for(var i=0;i<this.state.slots;i++)
         {
            slo.push({
                 slotNo:'Slot ' + (i+1)
             })
+            console.log(i+" num");
         }
 
         this.setState({
-            slots:slo
+            slot:slo
         })
         // console.log(slo);
-        })
+        // })
         // console.log(this.state.area+" "+this.state.slot);
         // var anorootRef=
-        firebase.database().ref().child('Location/'+parsed.key).push({
-            slot:this.state.slots
-        });
-        debugger;
+        // firebase.database().ref().child('Location/'+parsed.key).set({
+        //     slot:this.state.slots
+        // });
+        console.log(this.state.slots+" daa");
         // anorootRef.set({
         //     slot:this.state.slots
         // })
     }
     render()
     {
-            const assign =  this.state.slots.map((item,key)=>(
+            const assign =  this.state.slot.map((item,key)=>(
                 <MuiThemeProvider>
                   <RaisedButton primary={true} label={item.slotNo} />
                 </MuiThemeProvider>  

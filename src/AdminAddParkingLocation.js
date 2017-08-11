@@ -32,8 +32,7 @@ export class AdminAddParkingLocation extends Component{
         super();
         this.state = {
             area:'',
-            slot:'',
-            slots:[]
+            slot:''
         }
     }
     componentDidMount()
@@ -42,19 +41,19 @@ export class AdminAddParkingLocation extends Component{
     }
     justSubmit()
     {
-        var sloting=[];
-        for(var i=0;i<this.state.slot;i++)
-        {
-            sloting.push({
-                slotsNo: 'SlotNo' +(i+1)
-            })
-        }
-        this.setState({
-            slots: sloting
-        })
+        // var sloting=[];
+        // for(var i=0;i<this.state.slot;i++)
+        // {
+        //     sloting.push({
+        //         slotsNo: 'SlotNo' +(i+1)
+        //     })
+        // }
+        // this.setState({
+        //     slots: sloting
+        // })
         firebase.database().ref('Location').push({
             area:this.state.area,
-            slots:sloting
+            slots:this.state.slot
 
         }).catch(function(error){
             console.log("Error" + error.message);

@@ -8,8 +8,8 @@ import * as firebase from 'firebase';
 import './App.css'
 
 export class AdminViewParkingLocation extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state={
             location:''
         }
@@ -33,8 +33,13 @@ export class AdminViewParkingLocation extends Component{
             return(
                 <div className="jobview">
                     <p className="jobviewheading">Area: {this.state.location[key].area}</p>
-                    <p className="jobviewheading">Slot: {this.state.location[key].slot}</p>
-                   <Link to={"/viewslot?key="+key}> <button className="jobviewbutton" >View</button></Link> 
+                    <p className="jobviewheading">Slot: {this.state.location[key].slots}</p>
+                   <Link to={{
+                       pathname:'viewslot',
+                       state:{area:this.state.location[key].area,slot:this.state.location[key].slots}
+                   }}
+                   
+                   > <button className="jobviewbutton" >View</button></Link> 
                 </div>
             
             )

@@ -7,6 +7,7 @@ import MenuItem from 'material-ui/MenuItem';
 import AppBar from 'material-ui/AppBar';
 import {AdminAddParkingLocation} from './AdminAddParkingLocation';
 import {AdminViewParkingLocation} from './AdminViewParkingLocation';
+import {BookingForm} from './BookingForm';
 import {UserSendFeedback} from './UserSendFeedback';
 import {MyFeedback} from './MyFeedback';
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -50,7 +51,7 @@ export class UserDashboardToolbar extends Component {
                                         <br/>
                                         <Link to="/adminviewparkinglocation"><FlatButton label="View Parking Locations" primary={true}/></Link>
                                         <br/>
-                                        <Link to="/adminviewparkinglocation"><FlatButton label="View My Bookings"  primary={true}/></Link>
+                                        <Link to="/bookingform"><FlatButton label="View My Bookings"  primary={true}/></Link>
                                         <br/>
                                         <Link to="/myfeedback"><FlatButton label="My Feedbacks" primary={true}/></Link>
                                         <br/>
@@ -64,6 +65,7 @@ export class UserDashboardToolbar extends Component {
                                     <Route path="/adminviewparkinglocation" component={AdminViewParkingLocation}/>
                                     <Route path="/usersendfeedback" component={UserSendFeedback}/>
                                     <Route path="/myfeedback" component={MyFeedback}/>
+                                    <Route path="/bookingform" component={BookingForm}/>
                                 </div>
                         </div>
                     </MuiThemeProvider>
